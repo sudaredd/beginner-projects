@@ -19,14 +19,16 @@ def computer_guess(x):
     low = 1
     high = x
     feed_back= ''
+    guessed_attempts = 0
     while feed_back != 'c':
         guess = random.randint(low, high)
+        guessed_attempts += 1
         feed_back = input(f'is {guess} too high (H), too low (L), correct (C) '.lower())
         if feed_back == 'h':
             high = guess - 1
         elif feed_back == 'l':
             low = guess + 1
-    print(f'yay, The computer guessed your number {guess} correctly' )
+    print(f'yay, The computer guessed your number {guess} correctly in {guessed_attempts} attemts' )
 
 # guess(10)
 computer_guess(1000)
